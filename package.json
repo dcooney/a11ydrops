@@ -1,6 +1,6 @@
 {
 	"name": "a11ydrops",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "a11ydrops provides accessibility support for dropdown menus.",
 	"main": "src/a11ydrops.js",
 	"scripts": {
