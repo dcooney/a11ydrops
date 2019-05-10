@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
+		<title>
+			a11ydrops provides accessibility support for dropdown menus.
+		</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="inner">
+				<h1 style="font-size: 30px">a11ydrops</h1>
+				<p>
+					A small (5kb) JavaScript library that ensures your dropdown menus
+					are accessible via keyboard controls and screen readers.
+				</p>
+			</div>
+		</header>
+		<div id="container">
+			<div class="inner">
+				<h3>Listing</h3>
+				<p>Click to open each dropdown menu.</p>
+
+				<nav>
+					<ul class="main-nav">
+						<li>
+							Item One (Form)
+							<div class="sub-menu">
+								<div style="padding:5px;">
+									<label>
+										Name
+										<input type="text" />
+									</label>
+								</div>
+								<div style="padding:5px;">
+									<label>
+										Email
+										<input type="text" />
+									</label>
+								</div>
+								<div style="padding:5px;">
+									<button>Submit</button>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#">Item Two</a>
+							<ul class="sub-menu">
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Item Three</a>
+							<ul class="sub-menu">
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#">Item Four</a>
+							<ul class="sub-menu">
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+								<li><a href="#">Item</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Item Five</a></li>
+					</ul>
+				</nav>
+
+				<hr />
+
+				<h3>Mega Menu Listing</h3>
+				<p>Hover to open each dropdown menu.</p>
+
+				<nav>
+					<ul class="main-nav-2">
+						<li><a href="#">Item One</a></li>
+						<li>
+							<a href="#">Item Two</a>
+							<div class="sub-menu">
+								<h3>Heading</h3>
+								<ul>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+								</ul>
+								<h3>Heading</h3>
+								<ul>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">Item Three</a>
+							<div class="sub-menu">
+								<h3>Heading</h3>
+								<ul>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a href="#">Item</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#">Item Four</a>
+						</li>
+						<li><a href="#">Item Five</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+		<script src="../dist/a11ydrops.js"></script>
+		<script>
+			var nav1 = document.querySelector(".main-nav");
+			a11ydrops(nav1, {
+				// options,
+				selector: "li",
+				menu: ".sub-menu",
+				buttonText: "<span>Toggle Menu</span>",
+				buttonClasses: "button button-blue"
+			});
+
+			var nav2 = document.querySelector(".main-nav-2");
+			a11ydrops(nav2, {
+				// options,
+				selector: "li",
+				menu: ".sub-menu",
+				buttonText: '&darr;<span class="sr-only">Toggle Submenu</span>',
+				hover: true
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+@import "https://unpkg.com/reset-css@4.0.1/reset.css";
+* {
+	box-sizing: border-box;
+}
+body {
+	font-size: 16px;
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	color: #333;
+}
+header,
+#container {
+	width: 100%;
+	margin: 0;
+	padding: 30px;
+}
+.inner {
+	margin: 0 auto;
+	max-width: 1000px;
+}
+header {
+	background: #f7f7f7;
+}
+h1,
+h2,
+h3 {
+	font-weight: bold;
+	margin: 0 0 15px;
+}
+hr {
+	margin: 30px 0;
+	display: block;
+}
+a {
+	color: darkorchid;
+	text-decoration: none;
+}
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+.sr-only {
+	position: absolute;
+	left: -9999px;
+}
+.sub-menu ul + h3 {
+	padding-top: 15px;
+}
+p {
+	opacity: 0.8;
+	margin: 0;
+}
+h3 + p {
+	margin: 0 0 30px;
+}
+li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.main-nav > li,
+ul.main-nav-2 > li {
+	width: auto;
+	display: inline-block;
+	vertical-align: text-top;
+	margin: 0 20px 0 0;
+	padding: 0;
+	position: relative;
+}
+
+/* Navigation Menu Styling */
+button.a11ydrops-btn {
+	position: relative;
+	left: 2px;
+	top: -1px;
+}
+.sub-menu {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	transition: all 0.2s ease;
+	padding: 15px 20px;
+	background: #fff;
+	border: 1px solid #efefef;
+	border-radius: 3px;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+	width: auto;
+	min-width: 200px;
+	z-index: 9;
+}
+.sub-menu.active {
+	opacity: 1;
+	visibility: visible;
+}
+.sub-menu li {
+	display: block;
+	margin: 0;
+	border-top: 1px solid #efefef;
+}
+.sub-menu li:first-of-type {
+	border: none;
+}
+.sub-menu li a {
+	display: block;
+	padding: 5px 0;
+}
+.sub-menu h3 {
+	padding: 5px 0 15px;
+	margin: 0;
+	font-size: 14px;
+	text-transform: uppercase;
+}
