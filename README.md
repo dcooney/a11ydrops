@@ -41,7 +41,7 @@ There are optional [`configuration options`](#config-options) object that can mo
 import a11ydrops from "a11ydrops";
 
 let nav = document.querySelector("#main-nav");
-a11ydrops(nav, {
+a11ydrops.init(nav, {
 	// options
 	selector: "li"
 });
@@ -55,7 +55,7 @@ a11ydrops(nav, {
 
 ```javascript
 var nav = document.querySelector("#main-nav");
-a11ydrops(nav, {
+a11ydrops.init(nav, {
 	// options
 	selector: "li",
 	menu: ".sub-menu",

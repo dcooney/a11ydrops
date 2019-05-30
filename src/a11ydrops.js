@@ -11,7 +11,7 @@ require("./modules/polyfills");
  * @param {*} target
  * @param {*} options
  */
-let a11ydrops = (target, options) => {
+export function init(target, options) {
 	// Assign options
 	options = Object.assign({}, defaults, options);
 	options.target = target;
@@ -71,5 +71,4 @@ let a11ydrops = (target, options) => {
 	document.addEventListener("click", function(e) {
 		methods.clickOutside(e, options);
 	});
-};
-module.exports = a11ydrops;
+}

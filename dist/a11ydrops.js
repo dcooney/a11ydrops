@@ -1,5 +1,14 @@
-var a11ydrops =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["a11ydrops"] = factory();
+	else
+		root["a11ydrops"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -95,7 +104,7 @@ var a11ydrops =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar defaults = __webpack_require__(/*! ./modules/defaults */ \"./src/modules/defaults.js\");\nvar getSelectors = __webpack_require__(/*! ./modules/getSelectors */ \"./src/modules/getSelectors.js\");\nvar filterSelectors = __webpack_require__(/*! ./modules/filterSelectors */ \"./src/modules/filterSelectors.js\");\nvar setUpSelector = __webpack_require__(/*! ./modules/setUpSelector */ \"./src/modules/setUpSelector.js\");\nvar setupMenu = __webpack_require__(/*! ./modules/setupMenu */ \"./src/modules/setupMenu.js\");\nvar methods = __webpack_require__(/*! ./modules/methods */ \"./src/modules/methods.js\");\n__webpack_require__(/*! ./modules/polyfills */ \"./src/modules/polyfills.js\");\n\n/**\n * a11ydrops provides accessibility support for navigational drop menus\n * @param {*} target\n * @param {*} options\n */\nvar a11ydrops = function a11ydrops(target, options) {\n\t// Assign options\n\toptions = Object.assign({}, defaults, options);\n\toptions.target = target;\n\toptions.selector = options.selector ? options.selector : \"li\";\n\toptions.buttonText = options.buttonText ? options.buttonText : \"\";\n\toptions.buttonClasses = options.buttonClasses ? options.buttonClasses : \"\";\n\toptions.activeClass = options.activeClass ? options.activeClass : \"\";\n\n\t/*\n  * Exit if target not set\n  */\n\tif (!options.target || !options.menu) return false;\n\n\t/*\n  * Add `a11ydrops` class to target\n  */\n\toptions.target.classList.add(\"a11ydrops\");\n\n\t/*\n  * Set up menus.\n  */\n\n\tif (options.menu) {\n\t\t// Get all drop menus\n\t\tvar dropMenus = getSelectors(options.target, options.menu);\n\n\t\t// Loop all menus to add event listeners and required attributes\n\t\tdropMenus.forEach(function (menu) {\n\t\t\tsetupMenu(menu, options);\n\t\t});\n\t}\n\n\t/*\n  * Set up selectors.\n  */\n\n\t// Get all selector elements\n\tvar selectors = filterSelectors(getSelectors(options.target, options.selector), options);\n\n\t// Loop all selectors to add event listeners and required attributes\n\tselectors.forEach(function (selector) {\n\t\tsetUpSelector(selector, options);\n\t});\n\t/*\n  * Add escape listener to the window.\n  */\n\twindow.addEventListener(\"keydown\", function (e) {\n\t\tmethods.windowKeydown(e, options);\n\t});\n\n\t/*\n  * Detect all clicks on the document.\n  */\n\tdocument.addEventListener(\"click\", function (e) {\n\t\tmethods.clickOutside(e, options);\n\t});\n};\nmodule.exports = a11ydrops;\n\n//# sourceURL=webpack://a11ydrops/./src/a11ydrops.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\nexports.init = init;\nvar defaults = __webpack_require__(/*! ./modules/defaults */ \"./src/modules/defaults.js\");\nvar getSelectors = __webpack_require__(/*! ./modules/getSelectors */ \"./src/modules/getSelectors.js\");\nvar filterSelectors = __webpack_require__(/*! ./modules/filterSelectors */ \"./src/modules/filterSelectors.js\");\nvar setUpSelector = __webpack_require__(/*! ./modules/setUpSelector */ \"./src/modules/setUpSelector.js\");\nvar setupMenu = __webpack_require__(/*! ./modules/setupMenu */ \"./src/modules/setupMenu.js\");\nvar methods = __webpack_require__(/*! ./modules/methods */ \"./src/modules/methods.js\");\n__webpack_require__(/*! ./modules/polyfills */ \"./src/modules/polyfills.js\");\n\n/**\n * a11ydrops provides accessibility support for navigational drop menus\n * @param {*} target\n * @param {*} options\n */\nfunction init(target, options) {\n\t// Assign options\n\toptions = Object.assign({}, defaults, options);\n\toptions.target = target;\n\toptions.selector = options.selector ? options.selector : \"li\";\n\toptions.buttonText = options.buttonText ? options.buttonText : \"\";\n\toptions.buttonClasses = options.buttonClasses ? options.buttonClasses : \"\";\n\toptions.activeClass = options.activeClass ? options.activeClass : \"\";\n\n\t/*\n  * Exit if target not set\n  */\n\tif (!options.target || !options.menu) return false;\n\n\t/*\n  * Add `a11ydrops` class to target\n  */\n\toptions.target.classList.add(\"a11ydrops\");\n\n\t/*\n  * Set up menus.\n  */\n\n\tif (options.menu) {\n\t\t// Get all drop menus\n\t\tvar dropMenus = getSelectors(options.target, options.menu);\n\n\t\t// Loop all menus to add event listeners and required attributes\n\t\tdropMenus.forEach(function (menu) {\n\t\t\tsetupMenu(menu, options);\n\t\t});\n\t}\n\n\t/*\n  * Set up selectors.\n  */\n\n\t// Get all selector elements\n\tvar selectors = filterSelectors(getSelectors(options.target, options.selector), options);\n\n\t// Loop all selectors to add event listeners and required attributes\n\tselectors.forEach(function (selector) {\n\t\tsetUpSelector(selector, options);\n\t});\n\t/*\n  * Add escape listener to the window.\n  */\n\twindow.addEventListener(\"keydown\", function (e) {\n\t\tmethods.windowKeydown(e, options);\n\t});\n\n\t/*\n  * Detect all clicks on the document.\n  */\n\tdocument.addEventListener(\"click\", function (e) {\n\t\tmethods.clickOutside(e, options);\n\t});\n}\n\n//# sourceURL=webpack://a11ydrops/./src/a11ydrops.js?");
 
 /***/ }),
 
@@ -208,3 +217,4 @@ eval("\n\n/**\n * Convert NodeList to array\n * @param {NodeList} nodeList\n */\
 /***/ })
 
 /******/ });
+});
