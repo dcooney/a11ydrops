@@ -38,7 +38,7 @@ There are optional [`configuration options`](#config-options) object that can mo
 **ES6 Module**
 
 ```javascript
-import a11ydrops from "a11ydrops";
+import * as a11ydrops from "a11ydrops";
 
 let nav = document.querySelector("#main-nav");
 a11ydrops.init(nav, {
