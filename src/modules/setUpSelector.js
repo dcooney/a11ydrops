@@ -10,12 +10,16 @@ let getSelectors = require("./getSelectors");
 let setUpSelector = (selector, options) => {
 	// Add mouseeneter and mouseleave enter events when hover is enabled
 	if (options.hover) {
-		selector.addEventListener("mouseenter", function(e) {
-			methods.mouseenter(e, options);
+		selector.addEventListener("mouseenter", function (e) {
+			if (window.innerWidth > options.hover_width) {
+				methods.mouseenter(e, options);
+			}
 		});
 
-		selector.addEventListener("mouseleave", function(e) {
-			methods.mouseleave(e, options);
+		selector.addEventListener("mouseleave", function (e) {
+			if (window.innerWidth > options.hover_width) {
+				methods.mouseleave(e, options);
+			}
 		});
 	}
 
@@ -35,7 +39,7 @@ let setUpSelector = (selector, options) => {
 		let lastFocus = focusElements[focusElements.length - 1];
 		if (lastFocus) {
 			// Append eventListener to last item
-			lastFocus.addEventListener("keydown", function(e) {
+			lastFocus.addEventListener("keydown", function (e) {
 				methods.tabOut(e, selector, options);
 			});
 		}

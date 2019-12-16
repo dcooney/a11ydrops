@@ -61,14 +61,14 @@ export function init(target, options) {
 	/*
 	 * Add escape listener to the window.
 	 */
-	window.addEventListener("keydown", function(e) {
+	window.addEventListener("keydown", function (e) {
 		methods.windowKeydown(e, options);
 	});
 
 	/*
 	 * Detect all clicks on the document.
 	 */
-	document.addEventListener("click", function(e) {
+	document.addEventListener("click", function (e) {
 		methods.clickOutside(e, options);
 	});
 }

@@ -5,5 +5,6 @@ module.exports = {
 	defaultButtonClass: "a11ydrops-btn",
 	buttonClasses: "",
 	activeClass: "active",
-	hover: false
+	hover: false,
+	hover_width: 0
 };

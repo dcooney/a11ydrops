@@ -50,7 +50,8 @@ a11ydrops.init(nav, {
 **Vanilla JS**
 
 ```html
-<script src="{PATH_TO_SCRIPT}/a11ydrops.min.js" />;
+<script src="{PATH_TO_SCRIPT}/a11ydrops.min.js" />
+;
 ```
 
 ```javascript
@@ -100,6 +101,7 @@ Use following configuration options to modify a11ydrops functionality.
 | menu          | The ID or class for the menu.                       | `'.sub-menu'`   | String  |
 | activeClass   | The active/open class for the menu.                 | `'active'`      | String  |
 | hover         | Toggle the activeClass on mouse hover.              | `false`         | Boolean |
+| hover_width   | The minimum window width to trigger a hover effect. | `0`             | String  |
 | buttonText    | Text for the dropdown menu button.                  | `'Toggle Menu'` | String  |
 | buttonClasses | Add additional classes to the dropdown menu button. | null            | String  |
 
