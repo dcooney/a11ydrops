@@ -10,7 +10,7 @@ let methods = {
 	 * @param {HTMLElement} e - The current target element
 	 * @param {Object} options	- The plugin options
 	 */
-	buttonClick: function(e, options) {
+	buttonClick: function (e, options) {
 		let button = e;
 		let menu = button.parentNode.querySelector(options.menu);
 		if (!menu) {
@@ -29,7 +29,7 @@ let methods = {
 	 * @param {HTMLElement} e - The current target element
 	 * @param {Object} options	- The plugin options
 	 */
-	buttonKeydown: function(e, button, options) {
+	buttonKeydown: function (e, button, options) {
 		let menu = button.parentNode.querySelector(options.menu);
 		let keyCode = e.keyCode || e.which;
 		if (e.shiftKey && keyCode == keycodes.tab) {
@@ -45,7 +45,7 @@ let methods = {
 	 * @param {HTMLElement} e - The current target element
 	 * @param {Object} options	- The plugin options
 	 */
-	windowKeydown: function(e, options) {
+	windowKeydown: function (e, options) {
 		e = e || window.event;
 		var isEscape = false;
 		if ("key" in e) {
@@ -62,11 +62,12 @@ let methods = {
 			let links = filterSelectors(selectors, options);
 
 			// Loop all links and close open menus
-			links.forEach(link => {
+			links.forEach((link) => {
 				let button = link.querySelector(`.${options.defaultButtonClass}`);
 				let menu = link.querySelector(options.menu);
 				if (menu && menu.classList.contains(options.activeClass)) {
 					this.close(button, menu, options);
+					button.focus();
 				}
 			});
 		}
@@ -79,7 +80,7 @@ let methods = {
 	 * @param {HTMLElement} menu - The drop menu
 	 * @param {Object} options	- The plugin options
 	 */
-	open: function(button, menu, options) {
+	open: function (button, menu, options) {
 		if (!button || !menu) {
 			return false;
 		}
@@ -96,7 +97,7 @@ let methods = {
 	 * @param {HTMLElement} menu - The drop menu
 	 * @param {Object} options	- The plugin options
 	 */
-	close: function(button, menu, options) {
+	close: function (button, menu, options) {
 		if (!button || !menu) {
 			return false;
 		}
@@ -112,7 +113,7 @@ let methods = {
 	 * @param {HTMLElement} e - The current target element
 	 * @param {Object} options	- The plugin options
 	 */
-	mouseenter: function(e, options) {
+	mouseenter: function (e, options) {
 		let target = e.target;
 		let menu = target.querySelector(options.menu);
 		let button = target.querySelector(`.${options.defaultButtonClass}`);
@@ -134,7 +135,7 @@ let methods = {
 	 * @param {HTMLElement} e - The current target element
 	 * @param {Object} options	- The plugin options
 	 */
-	mouseleave: function(e, options) {
+	mouseleave: function (e, options) {
 		let target = e.target;
 		let menu = target.querySelector(options.menu);
 		let button = target.querySelector(`.${options.defaultButtonClass}`);
@@ -156,7 +157,7 @@ let methods = {
 	 * @param {element} target - The parent link element
 	 * @param {element} option- The plugin options
 	 */
-	tabOut: function(e, target, options) {
+	tabOut: function (e, target, options) {
 		let menu = target.querySelector(options.menu);
 		let button = target.querySelector(`.${options.defaultButtonClass}`);
 		let keyCode = e.keyCode || e.which;
@@ -175,10 +176,10 @@ let methods = {
 	 * @param {*} e - Clicked element
 	 * @param {element} option- The plugin options
 	 */
-	clickOutside: function(e, options) {
+	clickOutside: function (e, options) {
 		let menus = toArray(options.target.querySelectorAll(".a11ydrops-drop"));
 		if (menus) {
-			menus.forEach(menu => {
+			menus.forEach((menu) => {
 				let clickedInside = menu.parentNode.contains(e.target);
 				if (
 					menu.classList.contains(options.activeClass) &&
@@ -194,6 +195,6 @@ let methods = {
 				}
 			});
 		}
-	}
+	},
 };
 module.exports = methods;
