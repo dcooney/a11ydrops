@@ -6,7 +6,7 @@ a11ydrops is a small (5kb) JavaScript library that ensures your dropdown menus a
 
 1. Creates a button to toggle the state (open/closed) of the drop menu.
 2. Adds required `aria` attributes to link the toggle button and drop menu together.
-3. Enables keyboard controls to tab seemlessly though drop menus and escape when needed.
+3. Enables keyboard controls to tab seemlessly through drop menus and escape when needed.
 
 **Note**: a11ydrops does not provide any CSS styling. It simply injects required functionality to make the dropdown menus accessibile for every user.
 
